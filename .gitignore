@@ -1,0 +1,21 @@
+# Virtual Environment
+.venv/
+Lib/
+Scripts/
+pyvenv.cfg
+CACHEDIR.TAG
+
+# IDE
+.idea/
+*.iml
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# OS
+.DS_Store
+Thumbs.db

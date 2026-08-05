@@ -1,0 +1,32 @@
+name: Iris Model CI Pipeline
+
+# 1. Trigger: Run this pipeline every time someone pushes to the main branch
+on:
+  push:
+    branches: [ main, master ]
+
+# 2. Jobs: The actual steps the virtual server will take
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest # The operating system of GitHub's virtual machine
+
+    steps:
+    # Step A: Download your repository code onto the virtual machine
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    # Step B: Install Python on the virtual machine
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-python-version: '3.13'
+
+    # Step C: Install the required AI libraries
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install scikit-learn pandas
+
+    # Step D: Run your Python script to train and test the model
+    - name: Run ML Training & Test
+      run: python train.py
