@@ -1,5 +1,9 @@
 name: Iris Model CI Pipeline
 
+# 1. Global Environment Variables
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
 # 1. Trigger: Run this pipeline every time someone pushes to the main branch
 on:
   push:
