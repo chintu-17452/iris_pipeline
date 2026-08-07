@@ -29,7 +29,7 @@ jobs:
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install scikit-learn pandas
+        pip install -r requirement.txt
 
     # Step D: Run your Python script to train and test the model
     - name: Run ML Training & Test
